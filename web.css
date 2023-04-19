@@ -1,0 +1,741 @@
+/* change character style */
+body{
+	font-family: Microsoft JhengHei;
+	/* background-color: gray; */
+}
+.center{
+	text-align: center;
+}
+/* change header style */
+.header{
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 70px;
+	background-color: black;
+	/* 垂直置中 */
+  	display: -webkit-flex;
+  	display: flex;
+  	-webkit-align-items: center;
+  	align-items: center;
+}
+
+/* change a style in header */
+.header a{
+	text-decoration: none;
+	color: white;
+}
+/* change web logo in header */
+.headerlogo{
+	box-sizing: border-box;
+	display: inline-block;
+	width: 25%;
+	padding-left: 12.5%;
+}
+/* change search section style */
+.headersearch{
+	display: inline-block;
+	width: 50%;
+}
+/* change login section style */
+.headerlogin{
+	display: inline-block;
+	width: 25%;
+	text-align: center;
+}
+.headerlogined{
+	display: inline-block;
+	width: 25%;
+}
+.headerlogined li{
+	display: inline-block;
+	margin-left: 10%;
+	color: white;
+	font-size: 18px;
+}
+.headerlogined li:hover{
+	cursor: pointer;
+}
+/* change left side style */
+.leftside{
+	position: fixed;
+  	z-index: 1;
+	height: 100%;
+  	width: 25%;
+  	left: 0;
+  	margin-top: -10px;
+  	overflow-x: hidden;
+	box-sizing: border-box;
+	padding: 10px 10px 10px 5%;
+	overflow: hidden;
+}
+/* change a style in left side */
+.leftside a{
+	text-decoration: none;
+	display: block;
+	color: black;
+}
+.leftside a:hover{
+	background-color: #AAAAAA;
+	color: white;
+}
+/* change category style in the left side */
+.categories{
+	height: 100%;
+	width: 100%;
+	overflow-y: hidden;
+}
+.categories:hover{
+	/* padding-left: 2.5px; *//*to prevent from content repositioned*/
+	overflow-y: auto;
+}
+.category{
+	height: 40px;
+	width: 100%;
+	line-height: 40px;
+	text-align: center;
+}
+.category:hover{
+	background-color: #AAAAAA;
+	color: white;
+	cursor: pointer;
+}
+.cateheader{
+	height: 40px;
+	width: 100%;
+	line-height: 40px;
+	text-align: center;
+	/* color: white; */
+}
+/* change middle side or content style */
+.middleside{
+	box-sizing: border-box;
+	margin-top: 80px;
+	margin-left: 25%;
+	margin-right: 25%;
+}
+.searchmiddleside{
+	box-sizing: border-box;
+	margin-top: 80px;
+	margin-left: 25%;
+	margin-right: 25%;
+	display: none;
+}
+.chatroom{
+	width: 100%;
+	height: 700px;
+	border-style: none;
+	border-radius: 5px;
+	display: none;
+	/* background-color: yellow; */
+}
+
+.postimage{
+	width: 100%;
+	height: 200px;
+	background-color: blue;
+	border: 1px;
+	background-image: url('projectimages/test2.png');
+	background-repeat: no-repeat;
+	/* picture cover entire background */
+	background-size: cover;
+}
+.postheadersticky{
+	position: sticky;
+	top: 70px;
+	width: 100%;
+	height: 150px;
+	box-sizing: border-box;
+	background-color: white;
+	padding: 30px 8% 0 8%;
+  	border-style: none none groove none;
+  	border-width: 1px;
+  	border-radius: 5px 5px 0 0;
+}
+.chatheadersticky{
+	position: sticky;
+	top: 70px;
+	width: 100%;
+	height: 150px;
+	box-sizing: border-box;
+	background-color: white;
+	padding: 30px 8% 0 8%;
+  	border-style: none none groove none;
+  	border-width: 1px;
+	border-radius: 5px 5px 0 0;
+	  /* 垂直置中 */
+  	display: -webkit-flex;
+  	display: flex;
+  	-webkit-align-items: center;
+  	align-items: center;
+}
+.post{
+	width: 100%;
+	height: 150px;
+	box-sizing: border-box;
+	padding: 15px 8%;
+	background-color: white;
+	/* only change the bottom line of div */
+  	border-style: none none groove none;
+  	border-width: 1px;
+  	font-size: 15px;
+  	/* background-color: yellow; */
+}
+.post p{
+	line-height: 10px;
+
+}
+.tover{
+	width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* 垂直置中 */
+    height: 20px;
+  	display: -webkit-flex;
+  	display: flex;
+  	-webkit-align-items: center;
+  	align-items: center;
+}
+.post:hover{
+	cursor: pointer;
+}
+.posterinfo{
+	height: 33px;
+}
+.posterinfo p, img{
+	display: inline-block;
+}
+.posterheader{
+	font-weight: bold;
+	font-size: 20px;
+}
+/* post modal box style */
+.postmodal{
+	display: none; /* Hidden by default */
+  	position: fixed; /* Stay in place */
+ 	z-index: 2; /* Sit on top */
+  	/* padding-top: 100px; */ /* Location of the box */
+  	left: 0;
+  	top: 0;
+  	width: 100%; /* Full width */
+  	height: 100%; /* Full height */
+  	overflow: auto; /* Enable scroll if needed */
+  	background-color: rgb(0,0,0); /* Fallback color */
+  	background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-content {
+	box-sizing: border-box;
+  	background-color: #fefefe;
+  	margin: auto;
+  	padding: 1.5% 4%;
+  	border: 1px solid #888;
+  	height: 100%;
+  	width: 50%;
+  	overflow-y: auto;
+}
+/* .modal-content-pad{
+	padding: 1.5% 8%;
+} */
+.spanblue{
+	text-decoration: none;
+	color: cadetblue;
+}
+/*create chatroom button*/
+.createroomblue{
+	text-decoration: none;
+	background-color: cadetblue;
+	color: white;
+	height: 30px;
+	padding: 10px;
+	margin-left: 80%;
+	border-style: none;
+	border-radius: 3px;
+}
+.createroomblue:hover{
+	cursor: pointer;
+}
+.createroomblue:focus{
+	outline: none;
+}
+.spanblue:hover{
+	cursor: pointer;
+}
+.comments{
+	/* background-color: yellow; */
+	box-sizing: border-box;
+	width: 100%;
+}
+.comment{
+	box-sizing: border-box;
+	padding: 10px 0;
+	border-style: groove none none none;
+}
+.mycomment{
+	box-sizing: border-box;
+	padding: 10px 0;
+	border-style: none none groove none;
+}
+.mycomment:hover{
+	cursor: pointer;
+}
+.fkcommentarea{
+
+	position: fixed;
+	bottom: 0;
+	width: 41.9%;
+	margin-left: 25.1%;
+	margin-right: 25%;
+	padding: 0 4%;
+	box-shadow: 0 -2px 30px rgba(0, 0, 0, 0.19);
+	background-color: white;
+}
+.rlcommentarea{
+	position: fixed;
+	display: none;
+	bottom: 0;
+	width: 41.9%;
+	margin-left: 25.1%;
+	margin-right: 25%;
+	padding: 0 4%;
+	box-shadow: 0 -2px 30px rgba(0, 0, 0, 0.19);
+	background-color: white;
+}
+.fkmakecomment{
+	box-sizing: border-box;
+	font-size: 16px;
+	/* padding-left: 8%; */
+	width: 100%;
+	height: 50px;
+	border: none;
+	background-color: white;
+}
+.fkmakecomment:focus{
+	outline: none;
+}
+.rlmakecomment{
+	box-sizing: border-box;
+	font-size: 16px;
+	/* padding-left: 8%; */
+	width: 100%;
+	height: 200px;
+	border-style: groove;
+	background-color: white;
+}
+
+
+.commenttable{
+	border-style: none;
+	/* background-color: yellow; */
+}
+.close {
+  	color: #aaaaaa;
+  	float: right;
+  	font-size: 28px;
+  	font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  	color: #000;
+  	text-decoration: none;
+  	cursor: pointer;
+}
+/* change tab bar style2 */
+.tablink2{
+	box-sizing: border-box;
+  	float: left;
+  	border: none;
+  	outline: none;
+  	cursor: pointer;
+  	padding: 2.8%;
+  	width: 20%;
+  	height: 40px;
+  	line-height: 5px;
+  	color: black;
+  	background-color: white;
+}
+/* .tablink2:hover{
+	border-style: none none groove none;
+	border-color: dodgerblue;
+} */
+.tabcontent2{
+	/* box-sizing: border-box; */
+	/* margin-top: 10%; */
+	/* padding: 5%; */
+  	/* height: 90%; */
+  	display: none;
+}
+/* change right side style */
+/* .rightside{
+
+} */
+/* change userarea style */
+.userbar {
+  	min-height: 300px;
+  	width: 17%;
+  	position: fixed;
+  	z-index: 2;
+  	top: 70px;
+  	right: 3%;
+  	background-color: white;
+  	overflow-x: hidden;
+  	transition: 0.5s;
+  	/* padding-top: 70px; */
+  	border-style: none groove groove groove;
+  	display: none;
+  	text-align: center;
+}
+.userbar a{
+	text-decoration: none;
+	display: block;
+	color: black;
+}
+.userbar a:hover{
+	background-color: #AAAAAA;
+	color: white;
+}
+.useroption{
+	height: 40px;
+	width: 100%;
+	line-height: 40px;
+	text-align: center;
+}
+.useroption:hover{
+	cursor: pointer;
+	background-color: #AAAAAA;
+	color: white;
+}
+/* change user update info area */
+.userupdate{
+	box-sizing: border-box;
+	margin-top: 80px;
+	margin-left: 25%;
+	margin-right: 25%;
+	height: 100%;
+	padding: 1% 4% 5% 4%;
+	border-style: none groove none groove;
+	background-color: white;
+/* 	background-color: yellow; */
+}
+.floatless{
+	clear: both;
+}
+img.pencil{
+	width: 15px;
+	height: 15px;
+	margin-left: 10px;
+}
+img.pencil:hover{
+	cursor: pointer;
+}
+/* change register form style */
+.register{
+	width: 30%;
+	margin-top: 80px;
+	margin-left: 35%;
+	min-height: 500px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	border-style: groove;
+	/* text-align: center; */
+}
+.register a{
+	color: dodgerblue;
+}
+.signheader{
+	text-align: center;
+}
+input.inputtype1{
+  	display: block;
+  	width: 100%;
+  	padding: 15px;
+  	margin: 5% 0;
+	box-sizing: border-box;
+  	border: 1px solid gray;
+  	border-radius: 5px;
+}
+input.inputtype1:focus{
+  	outline:none;
+}
+.gendermargin{
+	margin: 5% 0;
+}
+.registerbtn {
+  	background-color: black;
+  	box-sizing: border-box;
+  	color: white;
+  	padding: 2%;
+  	margin: 5% 0;
+  	border: none;
+  	cursor: pointer;
+  	width: 100%;
+  	height: 50px;
+  	opacity: 0.7;
+  	border-radius: 5px;
+}
+.registerbtn:hover{
+	opacity: 0.8;
+}
+.registerbtn:focus{
+	outline: none;
+}
+/* for userinfopage */
+.sendbtn {
+  	background-color: black;
+  	box-sizing: border-box;
+  	color: white;
+  	padding: 2%;
+  	margin: 0 3%;
+  	border: none;
+  	cursor: pointer;
+  	width: 15%;
+  	height: 50px;
+  	opacity: 0.7;
+  	border-radius: 5px;
+  	float: right;
+}
+.sendbtn:hover{
+	opacity: 0.8;
+}
+.sendbtn:focus{
+	outline: none;
+}
+/* change tab bar style1 */
+.tablink1{
+	box-sizing: border-box;
+  	float: left;
+  	border: none;
+  	outline: none;
+  	cursor: pointer;
+  	padding: 5%;
+  	width: 50%;
+  	height: 40px;
+  	line-height: 5px;
+  	color: black;
+  	background-color: white;
+}
+.tablink1:hover{
+	border-style: none none groove none;
+	border-color: dodgerblue;
+}
+.tabcontent1{
+	box-sizing: border-box;
+	margin-top: 10%;
+	padding: 5%;
+  	height: 90%;
+  	display: none;
+}
+/* change scroll bar style */
+::-webkit-scrollbar {
+  	width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  	background: #444444;
+  	border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: gray;
+}
+/* search bar style */
+input.search{
+	box-sizing: border-box;
+	height: 30px;
+	border-radius: 5px;
+	border: 2px solid white;
+	padding: 5px 5px 5px 40px;
+	background-image: url('projectimages/searchicon.png');
+	background-position: 3px;
+	background-repeat: no-repeat;
+	transition: width ease-in-out;
+}
+/* search bar style */
+input.search:focus{
+	width: 75%;
+	outline: none;
+}
+/* submit button style */
+input.submit{
+	box-sizing: border-box;
+	height: 30px;
+	width: 7%;
+	border-radius: 8px;
+	color: white;
+	background-color: darkgray;
+	border: 2px solid white;
+	padding: 5px;
+	cursor: pointer;
+}
+/* change write post style */
+.writepost{
+	box-sizing: border-box;
+	padding: 30px 3%;
+	margin-top: 80px;
+	margin-left: 25%;
+	width: 50%;
+	min-height: 600px;
+	/* border: 2px groove black; */
+}
+.selectforwrite{
+	box-sizing: border-box;
+	min-width: 20%;
+	padding: 2px;
+	margin-top: 20px;
+	border-radius: 5px;
+	display: block;
+}
+.selectforwrite:focus{
+	outline: none;
+}
+input.postheader{
+	margin-top: 20px;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 2px;
+	display: block;
+	height: 40px;
+	border: none;
+	font-size: 25px;
+	font-weight: bold;
+}
+input.postheader:focus{
+	outline: none;
+}
+.postarea{
+	margin-top: 20px;
+	width: 100%;
+	min-height: 300px;
+}
+input.postsubmit{
+	border-radius: 5px;
+	padding: 10px;
+	float: right;
+	margin-right: 10px;
+	background-color: white;
+	border: none;
+}
+input.postsubmit:hover{
+	cursor: pointer;
+	background-color: dodgerblue;
+	color: white;
+}
+input.postsubmit:focus{
+	outline: none;
+}
+
+.verifyform{
+	width: 30%;
+	margin-left: 35%;
+	text-align: center;
+}
+
+/* chatroom style */
+.chatroomarea{
+	width: 100%;
+}
+.msginput{
+	width:99.5%;
+	height: 65px;
+}
+.chatroomheader{
+	margin-top: 50px;
+	width: 100%;
+	border-radius: 10px 10px 0 0;
+	height: 50px;
+	color:white;
+	background-color: black;
+	border:1px solid black;
+	text-align: center;
+	line-height: 50px;
+}
+.chatrecords{
+	width: 100%;
+	border:1px solid black;
+	height: 500px;
+	overflow-y: auto;
+}
+
+.messages{
+	clear: both;
+	width: 100%;
+	min-height: 30px;
+	padding: 20px 5%;
+	margin-top: 20px;
+	box-sizing: border-box;
+}
+/*.metyper{
+	padding: 5px;
+	float: right;
+	display: inline-block;
+	vertical-align: top;
+	color: cornflowerblue;
+}*/
+.othertyper{
+	padding: 5px;
+	/*float: left;*/
+	display: inline-block;
+	vertical-align: top;
+	color: cornflowerblue;
+}
+.mymessage{
+	box-sizing: border-box;
+	/* padding: 5px; */
+	/*float: right;*/
+	text-align: end;
+	/* min-height: 30px; */
+	max-width: 60%;
+	/*background-color: white;
+	color: black;
+	border-radius: 5px;
+	border: 1px solid black;*/
+	position: relative;
+}
+.mymessage .inner{
+	box-sizing: border-box;
+	display: inline-block;
+	/*float: left;*/
+	padding: 5px;
+	background-color: white;
+	color: black;
+	border-radius: 5px;
+	border: 1px solid black;
+	min-height: 30px;
+	position: absolute;
+	bottom: 0;
+}
+.othermessage{
+	box-sizing: border-box;
+	/*padding: 5px;*/
+	/*float: left;
+	min-height: 30px;*/
+	max-width: 60%;
+	position: relative;
+}
+.othermessage .inner{
+	box-sizing: border-box;
+	display: inline-block;
+	/*float: left;*/
+	padding: 5px;
+	background-color: white;
+	color: black;
+	border-radius: 5px;
+	border: 1px solid black;
+	min-height: 30px;
+}
+.memsgtime{
+	/*margin-top: 25%;*/
+	margin-right: 5px;
+	display: inline-block;
+}
+.othermsgtime{
+	/*float: left;*/
+	/*margin-top: 25%;*/
+	margin-left: 5px;
+	display: inline-block;
+	position: absolute;
+	bottom: 0;
+}
+.lock{
+	background-image: url("data:image/svg+xml,%3Csvg aria-hidden='true' focusable='false' data-prefix='fas' data-icon='lock' class='svg-inline--fa fa-lock fa-w-14' role='img' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='currentColor' d='M400 224h-24v-72C376 68.2 307.8 0 224 0S72 68.2 72 152v72H48c-26.5 0-48 21.5-48 48v192c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V272c0-26.5-21.5-48-48-48zm-104 0H152v-72c0-39.7 32.3-72 72-72s72 32.3 72 72v72z'/%3E%3C/svg%3E");
+}
